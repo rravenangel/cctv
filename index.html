@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Overlay</title>
+<style>
+    .video-container {
+        position: relative;
+        width: 1280px; /* Adjust width as needed */
+        height: 720px; /* Adjust height as needed */
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 55%;
+		left: 55%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Allows clicks to go through the overlay */
+    }
+
+    .video-overlay iframe {
+        width: 45%;
+        height: 45%;
+    }
+
+    .video-underlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-underlay iframe {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+    <!-- Underlay Video -->
+    <div class="video-underlay">
+        <iframe src="http://192.168.2.20:1984/stream.html?src=cctv1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Overlay Video -->
+    <div class="video-overlay">
+        <iframe src="http://192.168.2.20:1984/stream.html?src=cctv2" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+</body>
+</html>
